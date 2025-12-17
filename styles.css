@@ -4,6 +4,11 @@
     box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-color: var(--dark2) var(--dark1);
+
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -2532,6 +2537,7 @@ color: var(--dark2);
         width: 100%;
     }
 }
+
 
 
 #guide-menu-header{

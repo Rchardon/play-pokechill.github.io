@@ -4844,8 +4844,6 @@ function moveBuff(target,buff,mod){
 
 
     let affectedTurns = 3
-    if (buff == "speup1") affectedTurns = 2
-    if (buff == "speup2") affectedTurns = 2
     if (buff == "spedown1") affectedTurns = 2
     if (buff == "spedown2") affectedTurns = 2
     if (buff == "paralysis") affectedTurns = 2

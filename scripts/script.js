@@ -1,6 +1,43 @@
 
 
 
+
+
+
+
+
+
+
+
+(function () { //simulates contextmenu via longpress, thank you ios, very cool
+  let timer;
+  const LONG_PRESS = 500;
+
+  document.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+
+    timer = setTimeout(() => {
+      const touch = e.touches[0];
+
+      const evt = new MouseEvent("contextmenu", {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+
+      touch.target.dispatchEvent(evt);
+    }, LONG_PRESS);
+  }, { passive: false });
+
+  document.addEventListener("touchend", () => clearTimeout(timer));
+  document.addEventListener("touchmove", () => clearTimeout(timer));
+})();
+
+
+
+
 saved.theme = "dark"
 
 document.getElementById("settings-theme").addEventListener("change", e => {
@@ -36,7 +73,7 @@ function updateGameVersion() {
   }
 
 
-  saved.version = 1.0
+  saved.version = 1.1
   document.getElementById(`game-version`).innerHTML = `v${saved.version}`
 
 }
