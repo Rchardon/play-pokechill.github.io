@@ -290,6 +290,19 @@ item.lifeOrb = {
 }
 
 
+item.timeCandy = {
+    type: "key",
+    usable: true,
+    effect: function() {  if(afkSeconds<=0) {afkSeconds = 10*60; this.got--; updateItemBag()} else {document.getElementById("tooltipTop").style.display = "none"; document.getElementById("tooltipMid").style.display = "none"; document.getElementById("tooltipBottom").innerHTML = `Can't do that right now`; openTooltip()}  },
+    info: function() {return `Fast-forwards battle time by 10 minutes. Must be used while battling`},
+}
+
+item.timeCandyXL = {
+    type: "key",
+    usable: true,
+    effect: function() {  if(afkSeconds<=0) {afkSeconds = 30*60; this.got--; updateItemBag()} else {document.getElementById("tooltipTop").style.display = "none"; document.getElementById("tooltipMid").style.display = "none"; document.getElementById("tooltipBottom").innerHTML = `Can't do that right now`; openTooltip()}  },
+    info: function() {return `Fast-forwards battle time by 30 minutes. Must be used while battling`},
+}
 
 item.waterStone = {
     type: "key",

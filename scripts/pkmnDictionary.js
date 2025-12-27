@@ -1117,7 +1117,7 @@ pkmn.kadabra = {
         atk: 35,
         def: 30,
         satk: 120,
-        sdef: 70,
+        sdef: 100,
         spe: 105,
     },
     evolve: function() { return { 1: { pkmn: pkmn.alakazam, item: item.linkStone } } },
@@ -5377,12 +5377,13 @@ pkmn.megaMawile = {
     type: ["steel","fairy"],
     bst: {
         hp: 80,
-        atk: 180,
+        atk: 100,
         def: 125,
         satk: 60,
         sdef: 95,
         spe: 50,
-    }
+    },
+    hiddenAbility: ability.strongJaw,
 }
 
 // 309 Plusle
@@ -11740,7 +11741,6 @@ pkmn.rockruff = {
         return { 
             1: { pkmn: pkmn.lycanrocMidday, item: item.sunStone }, 
             2: { pkmn: pkmn.lycanrocMidnight, item: item.moonStone },
-            3: { pkmn: pkmn.lycanrocDusk, item: item.duskStone },
         } 
     },
 }

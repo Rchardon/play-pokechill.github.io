@@ -144,7 +144,16 @@ function updateGameVersion() {
   }
 
 
-  saved.version = 1.6
+  if (saved.version<1.7){
+  saved.currentSpiralingType = `normal`
+  saved.maxSpiralFloor = 1
+  saved.currentSpiralFloor = 1
+  saved.spiralRewardsClaimed = 0
+  }
+
+
+
+  saved.version = 1.7
   document.getElementById(`game-version`).innerHTML = `v${saved.version}`
 }
 
@@ -356,6 +365,50 @@ function learnPkmnMove(id, level, mod) {
     return undefined;
 }
 
+//used for the frontier 
+function learnPkmnMoveSeeded(id, level, mod, seed, exclude = []) {
+    let attempts = 0;
+    const MAX_ATTEMPTS = 100;
+
+    const rng = seed === undefined ? Math.random : mulberry32(seed);
+
+    while (attempts++ < MAX_ATTEMPTS) {
+        const types = pkmn[id].type;
+        const knownMoves = pkmn[id].movepool || [];
+
+        let tier = 3;
+        if (attempts > 10) tier = 2;
+        if (attempts > 20) tier = 1;
+
+        const allMoves = Object.keys(move).filter(m => {
+            const data = move[m];
+            return (
+                data.rarity === tier &&
+                (mod === "wild" || !knownMoves.includes(m)) &&
+                !exclude.includes(m)         
+            );
+        });
+
+        if (!allMoves.length) return null;
+
+        const typeMatch = [];
+        const movesetMatch = [];
+
+        for (const m of allMoves) {
+            const data = move[m];
+            if (types.includes(data.type)) typeMatch.push(m);
+            else if (types.some(t => data.moveset.includes(t)))
+                movesetMatch.push(m);
+        }
+
+        const chosenList = typeMatch.length ? typeMatch : movesetMatch;
+        if (!chosenList.length) continue;
+
+        return chosenList[Math.floor(rng() * chosenList.length)];
+    }
+
+    return null;
+}
 
 
 //--Gives Pokemon appropiate abilities

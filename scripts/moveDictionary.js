@@ -857,7 +857,7 @@ move.metalClaw = {
     type: "steel",
     power: 50,
     info: function() {return `10% chance to increase Attack by 50%`},
-    hitEffect: function(target) { moveBuff(target,'atkup1',"self") },
+    hitEffect: function(target) { if (rng(0.10)) moveBuff(target,'atkup1',"self") },
 }
 
 move.magnetBomb = {
@@ -1559,7 +1559,7 @@ move.liquidation = {
     type: "water",
     power: 85,
     info: function() {return `10% chance to increase Defense by 50%`},
-    hitEffect: function(target) { moveBuff(target,'defup1',"self") },
+    hitEffect: function(target) { if (rng(0.10)) moveBuff(target,'defup1',"self") },
 }
 
 move.aquaTail = {

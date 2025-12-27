@@ -3552,6 +3552,14 @@ areas.frontierGeeta = { //ghost
     type: `frontier`,
 }
 
+areas.frontierSpiralingTower = {
+    type: `frontier`,
+    level : 100,
+    background : `tower`,
+    floor : 1,
+    icon: pkmn.pikachu,
+}
+
 
 for (const i in areas){
     areas[i].id = i
