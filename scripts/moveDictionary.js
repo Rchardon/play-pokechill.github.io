@@ -2611,6 +2611,7 @@ move.shadowSneak = {
 move.confuseRay = {
     moveset: [`ghost`, `psychic`, `all`],
     split: "special",
+    unavoidable: true,
     rarity: 2,
     type: "ghost",
     power: 0,

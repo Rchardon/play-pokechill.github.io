@@ -2307,7 +2307,7 @@ areas.eventMegaPidgeot = {
     level : 100,
     team : {
         slot1 : pkmn.megaPidgeot,
-        slot1Moves : [move.agility.id,move.fly.id, move.hyperVoice.id, move.braveBird.id],
+        slot1Moves : [move.featherDance.id,move.fly.id, move.hyperVoice.id, move.heatWave.id],
     },
     reward : [item.pidgeotite, pkmn.pidgey]
 }

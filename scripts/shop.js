@@ -102,6 +102,12 @@ shop.mysticWater = {
     price: 5,
     category: `held`,
 }
+
+shop.twistedSpoon = {
+    icon: item.twistedSpoon.id,
+    price: 5,
+    category: `held`,
+}
 shop.neverMeltIce = {
     icon: item.neverMeltIce.id,
     price: 5,
@@ -312,6 +318,13 @@ shop.powerBand = {
     category: `genetics`,
 }
 
+shop.powerBelt = {
+    icon: item.powerBelt.id,
+    price: 1,
+    currency: `gold`,
+    category: `genetics`,
+}
+
 shop.powerBracer = {
     icon: item.powerBracer.id,
     price: 1,
@@ -452,6 +465,9 @@ let shopCategory = undefined
 
 function updateItemShop(){
 
+    document.getElementById("shop-currency").innerHTML = `<img src="img/items/bottleCap.png"> x${item.bottleCap.got}`
+    document.getElementById("shop-currency-gold").innerHTML = `<img src="img/items/goldenBottleCap.png"> x${item.goldenBottleCap.got}`
+
 
     if (shopCategory == undefined){
 
@@ -485,8 +501,7 @@ function updateItemShop(){
     document.getElementById("shop-categories").style.display = "none"
     document.getElementById("shop-listing").style.display = "flex"
 
-    document.getElementById("shop-currency").innerHTML = `<img src="img/items/bottleCap.png"> x${item.bottleCap.got}`
-    document.getElementById("shop-currency-gold").innerHTML = `<img src="img/items/goldenBottleCap.png"> x${item.goldenBottleCap.got}`
+
 
 
     for (let i in shop){

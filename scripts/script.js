@@ -535,7 +535,7 @@ guide.battleFatigue = {
 
 guide.statusEffects = {
   name: `Battle: Status Effects`,
-  description: function() { return `Certain moves inflict status effects such as ${tagConfused}, ${tagBurn}, ${tagPoisoned}, ${tagFreeze}, ${tagParalysis} or ${tagSleep}.<br><br>You can further check their effects by right click/long press<br><br>Status effects, like temporal stat changes, will count down with turns` }
+  description: function() { return `Certain moves inflict Status Effects such as ${tagConfused}, ${tagBurn}, ${tagPoisoned}, ${tagFreeze}, ${tagParalysis} or ${tagSleep}.<br><br>You can further check their effects by right click/long press<br><br>Status Effects, like temporal stat changes, will count down with turns. You can only apply one Status Effect at a time` }
 }
 
 guide.weather = {

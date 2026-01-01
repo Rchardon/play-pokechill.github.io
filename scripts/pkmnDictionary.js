@@ -1163,6 +1163,7 @@ pkmn.megaAlakazam = {
         spe: 150,
     },
     hiddenAbility: ability.magicGuard,
+    signature : move.kinesis
 }
 
 // 052 Machop → Machoke → Machamp

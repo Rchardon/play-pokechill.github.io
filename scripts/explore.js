@@ -3349,7 +3349,7 @@ function exploreCombatWild() {
         }
 
         if (wildBuffs.freeze==0 && wildBuffs.sleep==0 ){
-        if (move[nextMoveWild].hitEffect && typeEffectiveness(move[nextMoveWild].type, pkmn[team[exploreActiveMember].pkmn.id].type)!= 0) move[nextMoveWild].hitEffect("player")
+        if (move[nextMoveWild].hitEffect && ( typeEffectiveness(move[nextMoveWild].type, pkmn[team[exploreActiveMember].pkmn.id].type)!= 0 || move[nextMoveWild].unavoidable==true ) ) move[nextMoveWild].hitEffect("player")
         }
 
         //can be optimised
@@ -4156,7 +4156,7 @@ if (document.getElementById("pokedex-search").value!="") {
             if (evoItemToUse === "oddRock") levelToEvolve = wildAreaLevel4
             if (pkmn[i].evolve()[evo].pkmn.id.slice(0, 4) === "mega") levelToEvolve = 100
  
-            if (pkmn[i].level<levelToEvolve) continue
+            if (pkmn[i].level<levelToEvolve) hidePkmn = true
 
 
             div.addEventListener("click", e => { 
