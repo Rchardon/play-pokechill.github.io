@@ -622,7 +622,7 @@ areas.seafoamCurrents = {
     icon: pkmn.spheal,
     spawns: {
         common : [pkmn.pikipek,pkmn.fletchling, pkmn.spheal],
-        uncommon : [pkmn.masquerain],
+        uncommon : [pkmn.surskit],
         rare : [pkmn.tropius]
     },
     drops: {
@@ -2803,6 +2803,7 @@ areas.vsEliteFourPoppy = {
     },
     reward : [pkmn.chikorita, item.bottleCap]
 }
+
 areas.vsEliteFourLance = {
     name: `Elite Four Lance`,
     background : `gym`,
@@ -3045,7 +3046,7 @@ areas.vsMasterTrainerGeeta = {
 
 
 const exclusiveFrontierPkmn = [pkmn.relicanth, pkmn.heatmor, pkmn.durant, pkmn.comfey, pkmn.morpeko, pkmn.klefki, pkmn.munna, pkmn.finneon,
-pkmn.skorupi, pkmn.stunky, pkmn.zangoose, pkmn.spinda, pkmn.gulpin, pkmn.zigzagoon, pkmn.teddiursa, pkmn.pineco, pkmn.shuckle, pkmn.minccino, pkmn.cursola, pkmn.pincurchin, pkmn.stonjourner, pkmn.smeargle, pkmn.stantler, pkmn.thievul,
+pkmn.skorupi, pkmn.stunky, pkmn.zangoose, pkmn.spinda, pkmn.gulpin, pkmn.zigzagoon, pkmn.teddiursa, pkmn.pineco, pkmn.shuckle, pkmn.minccino, pkmn.pincurchin, pkmn.stonjourner, pkmn.smeargle, pkmn.stantler, pkmn.thievul,
 
 pkmn.charmander, pkmn.squirtle, pkmn.bulbasaur, pkmn.chikorita, pkmn.cyndaquil, pkmn.totodile, pkmn.mudkip, pkmn.torchic, pkmn.treecko, pkmn.turtwig, pkmn.piplup, pkmn.chimchar, pkmn.tepig, pkmn.snivy, pkmn.oshawott, pkmn.froakie, pkmn.chespin, pkmn.fennekin, pkmn.rowlet, pkmn.litten, pkmn.popplio, pkmn.grookey, pkmn.scorbunny, pkmn.sobble,
 
@@ -3685,6 +3686,5 @@ for (const i in areas){
         areas[i].unlockDescription = `Defeat Gym Leader Phoebe in VS to unlock`
         areas[i].unlockRequirement = function() { return areas.vsGymLeaderPhoebe.defeated }
     }
-
 
 }
