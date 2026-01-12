@@ -6048,8 +6048,8 @@ function loop() {
     
     afkSecondsGenetics += elapsed;
 
-    if (afkSeconds>0 && document.getElementById("content-explore").style.display == "flex" && document.getElementById(`tooltipBackground`).style.display !== "flex") document.getElementById("afk-overlay").style.display = "flex"
-    else document.getElementById("afk-overlay").style.display = "none"
+    //if (afkSeconds>0 && document.getElementById("content-explore").style.display == "flex" && document.getElementById(`tooltipBackground`).style.display !== "flex") document.getElementById("afk-overlay").style.display = "flex"
+    //else document.getElementById("afk-overlay").style.display = "none"
 
     
     if (elapsed > 0.1) {
@@ -7534,3 +7534,4 @@ window.addEventListener('load', function() {
 
     //updateTeamExp()
 });
+
